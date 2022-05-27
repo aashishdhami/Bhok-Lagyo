@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/index.css" />
+    <title>Bhok Lagyo</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="main-header">
+          <a href="#" class="logo"
+            ><i class="fas fa-utensils"></i>&nbsp BHOK LAGYO</a
+          >
+          <nav class="nav-btns">
+            <a
+              href="#"
+              class="nav-btns__signup btn__light-mode btn--show-modal1"
+              >Sign up</a
+            >
+            <a href="#" class="nav-btns__signin btn__dark-mode btn--show-modal2"
+              >Sign in</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="main-area">
+      <div class="main-area__items">
+        <div class="main-area__content">
+          <h2>
+            <span class="upper-text">The quickest way to</span> <br />
+            <span class="lower-text">find the perfect bite</span>
+          </h2>
+        </div>
+        <div class="main-area__image-container">
+          <img
+            src="../images/home-img.png"
+            alt="food img"
+            class="main-area__image animate"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sign Up Modal -->
+    <div class="modal signup-modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Open your account <br />
+        <span class="highlight">instantly</span>
+      </h2>
+      <form class="modal__form">
+        <label>Full Name</label>
+        <input type="text" class="user-fname" placeholder="John Doe" />
+        <label>Email</label>
+        <input type="email" class="user-email" placeholder="name@example.com" />
+        <label>Password</label>
+        <input type="password" class="user-pw" placeholder="Password" />
+        <button class="btn btn-signup">Sign up &rarr;</button>
+      </form>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="modal signin-modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Sign in to your &nbsp;
+        <span class="highlight">account</span>
+      </h2>
+      <form class="modal__form">
+        <label>Username</label>
+        <input class="signin-username" type="text" />
+        <label>Password</label>
+        <input class="signin-pw" type="password" />
+        <a href="#" class="btn btn-signin-okay">Okay &rarr;</a>
+        <p class="wrong-signin-details hidden">
+          Wrong account details. Please try again!
+        </p>
+      </form>
+    </div>
+
+    <div class="modal signup-success__modal hidden">
+      <div class="signup-success__message">
+        <p class="signup-success__message-main">
+          Congratulations! Your account has been created 🎉
+        </p>
+        <p class="signup-success__message-sub">
+          Your username is '<span class="signup-username">ad</span>'
+        </p>
+        <p class="proceed-msg">Please proceed to sign in</p>
+        <button class="btn btn-signup-okay">Okay &rarr;</button>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="/index.js"></script>
+  </body>
+</html>

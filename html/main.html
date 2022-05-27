@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/recipe-checker.css" />
+    <title>Welcome | Bhok Lagyo</title>
+  </head>
+  <body>
+    <!-- This contains all the sections / buttons of our app -->
+    <div id="container" class="container">
+      <!-- One section for app logo -->
+      <a href="#" class="logo">
+        <i class="fas fa-utensils"></i>
+        <h2 class="logo__name">Bhok Lagyo</h2>
+      </a>
+
+      <!-- One section for search bar -->
+      <div id="search-bar">
+        <div class="search_wrap search_wrap_3">
+          <div class="search_box">
+            <form class="search-form">
+              <input
+                type="text"
+                class="input"
+                placeholder="Search for foods..."
+              />
+              <div class="btn btn_common">
+                <i class="fas fa-search"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- One section for welcome msg -->
+      <div class="welcome-msg">
+        <p>
+          Welcome, &nbsp; <span class="highlight currentUserName">Aashish</span>
+        </p>
+      </div>
+
+      <!-- One section for menu -->
+      <div id="menu">
+        <div class="menu-items">
+          <a href="#" class="menu-item my-orders">Checkout</a>
+          <a href="#" class="menu-item my-bookmarks">Bookmarked Recipes</a>
+          <a href="#" class="menu-item my-recipes">My Recipes</a>
+          <a href="#" class="menu-item logout">Logout</a>
+        </div>
+      </div>
+
+      <!-- One section for food-items -->
+      <div id="food-container">
+        <div class="food-container">
+          <!-- Container for pure-veg items cards -->
+          <div id="pure-veg">
+            <p class="category-name">Pure Veg</p>
+            <div class="pure-veg__container"></div>
+          </div>
+
+          <div id="chicken-specials">
+            <p class="category-name">Chicken Specials</p>
+            <div class="chicken-specials__container"></div>
+          </div>
+
+          <div id="biryanis">
+            <p class="category-name">Biryanis</p>
+            <div class="biryanis__container"></div>
+          </div>
+
+          <div id="chinese">
+            <p class="category-name">Chinese</p>
+            <div class="chinese__container"></div>
+          </div>
+
+          <div id="paneer-specials">
+            <p class="category-name">Paneer Specials</p>
+            <div class="paneer-specials__container"></div>
+          </div>
+        </div>
+
+        <!-- My wishlist section -->
+        <div id="my-wishlist" class="hidden">
+          <p class="wishlist-title">My Wishlist</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody class="wishlist__table-body"></tbody>
+          </table>
+
+          <div class="wishlist-checkout">
+            <button class="wishlist__checkout-btn">Checkout</button>
+            <p class="total-amount-txt">
+              Total Amount : Rs <span class="total-amount">0</span>
+            </p>
+          </div>
+        </div>
+
+        <div id="recipe-container" class="hidden">
+          <div class="searched-recipes-wrap"></div>
+        </div>
+
+        <div class="my-recipes__container hidden">
+          <!-- to create recipes -->
+          <div id="my-recipes">
+            <h2 class="create-recipe__header">Create Your Recipe</h2>
+            <div class="create-recipe__container">
+              <form id="create-recipe__form">
+                <div class="form-item">
+                  <label for="name" class="form__item-name"
+                    >Name of Recipe</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="e.g., Pasta"
+                    class="recipe-name"
+                  />
+                </div>
+
+                <div class="form-item">
+                  <label for="method" class="form__item-name"
+                    >Recipe method</label
+                  >
+                  <textarea
+                    name="method"
+                    id="method"
+                    cols="30"
+                    rows="5"
+                    placeholder="Step by step procedure..."
+                    class="recipe-method"
+                  ></textarea>
+                </div>
+
+                <div class="form-item">
+                  <label for="time" class="form__item-name"
+                    >Time (in mins)</label
+                  >
+                  <input
+                    type="number"
+                    name="time"
+                    id="time"
+                    placeholder="e.g., 30 mins"
+                    class="recipe-time"
+                  />
+                </div>
+
+                <div class="form-item">
+                  <label for="notes" class="form__item-name"
+                    >Notes (optional)</label
+                  >
+                  <textarea
+                    name="notes"
+                    id="notes"
+                    cols="30"
+                    rows="3"
+                    placeholder="Notes..."
+                    class="recipe-notes"
+                  ></textarea>
+                </div>
+
+                <div class="create-recipe__btn">
+                  <input
+                    type="submit"
+                    value="Add recipe"
+                    class="btn__submit-recipe"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- view saved recipes -->
+          <div id="saved-recipes">
+            <h2 class="saved-recipes-header">Saved Recipes</h2>
+            <div class="saved-recipes-container"></div>
+          </div>
+        </div>
+
+        <!-- Bookmarked Recipes -->
+        <div id="bookmarked-recipes" class="hidden">
+          <h2 class="bookmarked-recipes-header">Bookmarked Recipes</h2>
+          <div class="bookmarked-recipes__container"></div>
+        </div>
+
+        <!-- Order success modal -->
+        <div class="modal order-success__modal hidden">
+          <div class="order-success__message">
+            <p class="order-success__message-main">
+              Congratulations! Your order has been placed successfully 🎉
+            </p>
+
+            <p class="continue-msg">Continue ordering food with us 🤗</p>
+            <button class="btn btn__order-success-okay">Okay &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Logout modal -->
+        <div class="modal logout__modal hidden">
+          <div class="logout__message">
+            <p class="logout__message-main">
+              Are you sure you want to log out?
+            </p>
+            <div class="logout-btns">
+              <button class="btn btn__logout btn__logout-yes">YES</button>
+              <button class="btn btn__logout btn__logout-no">NO</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay hidden"></div>
+      </div>
+
+      <!-- One section for our specials -->
+      <div id="our-specials">
+        <h2 class="special-items__header">Our Specials</h2>
+        <ul class="special-items">
+          <li>
+            <a href="#pure-veg" class="special-item veg">For Vegetarians</a>
+          </li>
+          <li>
+            <a href="#chicken-specials" class="special-item chicken"
+              >Chicken Specials</a
+            >
+          </li>
+          <li><a href="#biryanis" class="special-item biryani">Biryanis</a></li>
+          <li><a href="#chinese" class="special-item chinese">Chinese</a></li>
+          <li>
+            <a href="#paneer-specials" class="special-item paneer"
+              >Paneer Specials</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/recipe-checker.js"></script>
+  </body>
+</html>
