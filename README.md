@@ -9,3 +9,4 @@
   * You can't un-wishlist the food items (neither by clicking again on wishlist icon nor by decreasing quantity of the item to less than 1 i.e. 0)
   * This app doesn't really save users' wishlisted food items, bookmarked recipes and created recipes in their own profile / account
   * At last, the code may not be perfectly organized 😁
+ 
