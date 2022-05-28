@@ -10,3 +10,6 @@
   * This app doesn't really save users' wishlisted food items, bookmarked recipes and created recipes in their own profile / account
   * At last, the code may not be perfectly organized 😁
  
+# Live Site
+
+https://bhok-lagyo.netlify.app/
